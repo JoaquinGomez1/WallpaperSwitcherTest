@@ -12,15 +12,14 @@ def Start():
 def Check():
     CurrentTime = time.strftime("%H:%M:%S")
     for i in range(5):  # 5= Cantidad de tiempos diferentes
-        if TiempIniciales[i] <= str(CurrentTime) <= TiempFinales[i]:
+        if ListaDeTiempos[i] <= str(CurrentTime) <= ListaDeTiempos[i + 1]:
             ctypes.windll.user32.SystemParametersInfoW(20, 0, str(vec[i + 1]), 3)  # Comando para cambiar el Wallpaper
 
-        elif TiempFinales[-1] >= CurrentTime:  # Considero que es de noche
+        elif ListaDeTiempos[0] >= CurrentTime:  # Considero que es de noche
             ctypes.windll.user32.SystemParametersInfoW(20, 0, str(vec[-1]), 3)
 
-        elif CurrentTime >= TiempIniciales[-1]:
+        elif CurrentTime >= ListaDeTiempos[-1]:
             ctypes.windll.user32.SystemParametersInfoW(20, 0, str(vec[-1]), 3)
-
 
 
 def ReadPaths():
@@ -34,8 +33,7 @@ def ReadPaths():
 
 
 if __name__ == "__main__":
-    TiempIniciales = ["04:00:00", "06:00:00", "12:00:00", "17:00:00", "19:30:00", "21:00:00"]
-    TiempFinales = ["06:00:00", "12:00:00", "17:00:00", "19:30:00", "21:00:00", "04:00:00"]
+    ListaDeTiempos = ["04:00:00", "06:00:00", "12:00:00", "17:00:00", "19:30:00", "21:00:00"]
     creado = False
     CImagenes = 6
 
