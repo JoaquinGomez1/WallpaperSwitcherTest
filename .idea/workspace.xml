@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0b5ee40a-8639-4d5a-9841-aa79b9d30272" name="Default Changelist" comment="" />
+    <list default="true" id="0b5ee40a-8639-4d5a-9841-aa79b9d30272" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Main_Wallpaper.pyw" beforeDir="false" afterPath="$PROJECT_DIR$/Main_Wallpaper.pyw" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,12 +19,13 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="DONT_SYNC" />
   </component>
   <component name="ProjectId" id="1U5F7n2jU3ko8hasc4dw8sGbAiK" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="C:/Program Files/Git/git-bash.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RunDashboard">
@@ -36,7 +40,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Wallpaper Copy">
+  <component name="RunManager" selected="Python.Main_Wallpaper.pyw (1)">
     <configuration name="Main_Wallpaper (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="WallpaperSwitcher" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,8 +190,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Wallpaper Copy" />
         <item itemvalue="Python.setup" />
+        <item itemvalue="Python.Wallpaper Copy" />
         <item itemvalue="Python.Main_Wallpaper (1)" />
         <item itemvalue="Python.Walppaper Copy" />
       </list>
@@ -204,6 +208,21 @@
       <option name="presentableId" value="Default" />
       <updated>1574638384606</updated>
     </task>
+    <task id="LOCAL-00001" summary="Agregado mensaje de error para cuando la imagen no existe">
+      <created>1583358012163</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583358012163</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Agregado mensaje de error para cuando la imagen no existe">
+      <created>1583358193833</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1583358193833</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,10 +230,17 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Agregado mensaje de error para cuando la imagen no existe" />
+    <option name="LAST_COMMIT_MESSAGE" value="Agregado mensaje de error para cuando la imagen no existe" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
