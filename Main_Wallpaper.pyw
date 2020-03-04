@@ -18,7 +18,7 @@ def Check(): #Esta funcion se encarga de chequear la hora y cambiar el fondo de 
     CurrentTime = time.strftime("%H:%M:%S")
     for i in range(len(ListaDeTiempos)):
         if ListaDeTiempos[i] <= str(CurrentTime) <= ListaDeTiempos[i + 1]:
-            ctypes.windll.user32.SystemParametersInfoW(20, 0, str(vec[i + 1]), 3)  # Comando para cambiar el Wallpaper
+            ctypes.windll.user32.SystemParametersInfoW(20, 0, str(vec[i + 1]), 0x14)  # Comando para cambiar el Wallpaper
 
         elif ListaDeTiempos[0] >= CurrentTime:  # Considero que es de noche
             ctypes.windll.user32.SystemParametersInfoW(20, 0, str(vec[-1]), 3)
@@ -33,11 +33,15 @@ def ReadPaths():
     Lista = path.splitlines()  # path contiene toda la info como string y con esto lo divido en una lista
     for i in range(1, len(Lista)):
         Lista[i] = Lista[i].replace("Imagen 0{}=".format(i - 1), "").lower()
+        Lista[i] = os.path.normpath(Lista[i])
         if not os.path.exists(Lista[i]):
-            root = tk.Tk()
-            root.withdraw()
-            messagebox.showerror(message='La direccion {} no existe. Verificá que esté escrita correctamente'.format(Lista[i]),
-                             title='Direccion no encontrada')
+            if Lista[i] == "":
+                messagebox.showerror(message='Debes completar los seis campos de imagen', title='Completar')
+            else:
+                root = tk.Tk()
+                root.withdraw()
+                messagebox.showerror(message='La dirección {} no existe. Verificá que esté escrita correctamente'.format(Lista[i].upper()),
+                                 title='Direccion no encontrada')
             return None
 
     return Lista
