@@ -1,4 +1,6 @@
 import ctypes, time, os
+import tkinter as tk
+from tkinter import messagebox
 
 
 def Start():
@@ -9,9 +11,12 @@ def Start():
     ArchivoConfig.close()
 
 
-def Check():
+def Check(): #Esta funcion se encarga de chequear la hora y cambiar el fondo de pantalla
+    if vec == None:
+        return None
+
     CurrentTime = time.strftime("%H:%M:%S")
-    for i in range(5):  # 5= Cantidad de tiempos diferentes
+    for i in range(len(ListaDeTiempos)):
         if ListaDeTiempos[i] <= str(CurrentTime) <= ListaDeTiempos[i + 1]:
             ctypes.windll.user32.SystemParametersInfoW(20, 0, str(vec[i + 1]), 3)  # Comando para cambiar el Wallpaper
 
@@ -27,7 +32,13 @@ def ReadPaths():
     path = ArchivoConfig.read()
     Lista = path.splitlines()  # path contiene toda la info como string y con esto lo divido en una lista
     for i in range(1, len(Lista)):
-        Lista[i] = Lista[i].replace("Imagen 0{}=".format(i - 1), "")
+        Lista[i] = Lista[i].replace("Imagen 0{}=".format(i - 1), "").lower()
+        if not os.path.exists(Lista[i]):
+            root = tk.Tk()
+            root.withdraw()
+            messagebox.showerror(message='La direccion {} no existe. Verificá que esté escrita correctamente'.format(Lista[i]),
+                             title='Direccion no encontrada')
+            return None
 
     return Lista
 
